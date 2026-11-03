@@ -1,0 +1,133 @@
+/* Pagine: filetti e proporzioni da rivista, con palette e caratteri esistenti. */
+.testata {
+  border-top: 1px solid var(--inchiostro);
+  border-bottom: 3px double var(--inchiostro);
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.testata span {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+/* Frontespizio della collana. */
+.intro {
+  display: block;
+  text-align: center;
+  padding: 42px 0 46px;
+}
+.intro .etichetta {
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: 11px;
+  margin-bottom: 22px;
+}
+.intro h1 {
+  font-size: clamp(88px, 12vw, 156px);
+  letter-spacing: -.035em;
+  margin: 0;
+}
+.intro > p:last-child {
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.35;
+  margin: 22px auto 0;
+  max-width: 580px;
+}
+.intro > p:last-child br { display: none; }
+.episodio { border-top: 3px double var(--inchiostro); padding-top: 0; }
+.dati {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--inchiostro);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.presentazione { gap: 64px; padding: 42px 0 54px; }
+.autrice { letter-spacing: .08em; font-size: 12px; }
+.presentazione h2 { font-size: clamp(48px, 5.3vw, 76px); line-height: 1.02; }
+.presentazione h2 em { display: inline-block; margin-top: 10px; font-size: .55em; }
+.descrizione { line-height: 1.6; }
+.tempi { border-top: 1px solid #2a252240; padding-top: 18px; font-size: 11px; }
+.leggi {
+  border: 3px double var(--inchiostro);
+  padding: 10px 18px;
+  font-size: 19px;
+}
+.ascolta { font-size: 19px; font-style: italic; }
+.immagine {
+  transform: none;
+  padding: 10px;
+  border: 1px solid var(--inchiostro);
+  outline: 1px solid #2a252240;
+  outline-offset: 5px;
+  box-shadow: none;
+}
+.nota { border-top: 3px double var(--inchiostro); padding-top: 30px; }
+.nota h2 { font-style: italic; }
+body > footer:not(.crediti) { border-top: 1px solid var(--inchiostro); font-size: 11px; }
+
+/* Articolo: margini quieti, indice a righe, numerazione da fascicolo. */
+.apertura { padding-top: 56px; }
+.apertura > .numero {
+  border-bottom: 1px solid #2a252240;
+  padding-bottom: 14px;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+.apertura h1 { margin: 28px 0; text-wrap: balance; }
+.apertura .sottotitolo { font-style: italic; }
+.apertura nav { border-top: 3px double var(--inchiostro); padding-top: 10px; }
+.apertura nav li { margin: 0; border-bottom: 1px solid #2a252230; }
+.apertura nav a { padding: 13px 0; font-size: 25px; }
+.apertura nav span { font-size: 11px; }
+.testo > .numero {
+  display: inline-block;
+  border-top: 1px solid var(--mattone);
+  border-bottom: 1px solid var(--mattone);
+  padding: 5px 0;
+  min-width: 50px;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+.testo h2 { margin-top: 18px; }
+.testo h3 { font-style: italic; }
+.costellazione { border-top: 3px double var(--inchiostro); }
+.crediti { border-top: 3px double var(--inchiostro); padding-top: 24px; }
+.crediti h2 { font-style: italic; }
+
+/* Il player conserva tutti i comandi e il contrasto già approvati. */
+.lettore {
+  border: 3px double #2a252260;
+  border-radius: 2px;
+  box-shadow: 0 5px 18px #211a161a;
+}
+.lettore button, .lettore select, .lettore .audio-segui { border-radius: 2px; }
+.lettore .audio-play, .lettore .audio-salto { border-radius: 50%; }
+.lettore-info > span { letter-spacing: .08em; }
+.lettore-dettagli { border-bottom: 3px double #2a252238; }
+
+@media (max-width: 760px) {
+  .testata { margin-top: 12px; padding-top: 16px; padding-bottom: 16px; }
+  .testata span { font-size: 10px; letter-spacing: .13em; }
+  .intro { padding: 32px 0 34px; }
+  .intro .etichetta { font-size: 10px; letter-spacing: .08em; margin-bottom: 16px; }
+  .intro h1 { margin: 0; }
+  .intro > p:last-child { font-size: 23px; margin-top: 18px; max-width: 320px; }
+  .dati { font-size: 10px; letter-spacing: 0; gap: 10px; }
+  .presentazione { gap: 34px; padding: 30px 0 36px; }
+  .presentazione h2 { font-size: clamp(45px, 10vw, 62px); }
+  .immagine { width: calc(100% - 12px); max-width: 350px; padding: 8px; }
+  .ascolta { margin-top: 18px; }
+  .nota { padding-top: 26px; }
+}
+@media (max-width: 600px) {
+  .apertura { padding-top: 32px; }
+  .apertura nav a { font-size: 23px; gap: 14px; }
+  .lettore { border-radius: 2px; }
+}
+@media print {
+  .immagine { outline: none; }
+  .crediti { border-top: 1px solid; }
+}
